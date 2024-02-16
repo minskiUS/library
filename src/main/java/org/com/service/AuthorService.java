@@ -10,12 +10,10 @@ import java.util.Collections;
 import java.util.List;
 @Slf4j
 public class AuthorService {
-    private Connection connection;
     private BaseRepository<Author> authorRepository;
 
-    public AuthorService(Connection connection) {
-        this.connection = connection;
-        this.authorRepository = new AuthorRepository(connection);
+    public AuthorService() {
+        this.authorRepository = new AuthorRepository();
     }
     public void test() {
         Author author = new Author("Alexander", "Pushkin");
